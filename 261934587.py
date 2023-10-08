@@ -1,15 +1,15 @@
 import json
 
-# Initialize empty flight data dictionary
+
 flight_data = {}
 
-# Function to display available flights
+
 def display_flights():
     print("Available Flights:")
     for flight, details in flight_data.items():
         print(flight, ":", details["name"])
 
-# Function for user login
+
 def user_login():
     while True:
         username = input("Enter username: ")
@@ -21,7 +21,7 @@ def user_login():
         else:
             print("Incorrect credentials. Please try again.")
 
-# Function to book a ticket
+
 def book_ticket(user):
     display_flights()
     selected_flight = input("Select a flight: ")
@@ -31,7 +31,7 @@ def book_ticket(user):
         for row in seat_array:
             print(" ".join(row))
 
-        # Ask for row and seat number to book
+        
         while True:
             try:
                 row = int(input("Enter row number: "))
@@ -47,12 +47,12 @@ def book_ticket(user):
             except (ValueError, IndexError):
                 print("Invalid input. Please try again.")
 
-# Function to cancel a booking
+
 def cancel_booking(user):
-    # Implement cancel booking logic here
+   
     pass
 
-# Main program loop
+
 while True:
     print("\nAirplane Management System")
     print("1. User Login")
@@ -81,13 +81,13 @@ while True:
                 else:
                     print("Invalid choice. Please try again.")
         elif user_type == "admin":
-            # Implement admin functions
+            
             pass
     elif choice == "2":
-        # Implement flight details management
+     
         pass
     elif choice == "3":
-        # Save flight_data dictionary to a file
+       
         with open("flight_data.json", "w") as file:
             json.dump(flight_data, file)
         print("Flight data saved.")
